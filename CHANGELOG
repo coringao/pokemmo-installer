@@ -14,6 +14,8 @@
 **version: 1.4.3**
  * Fixed an issue where XDG directories could be invalid
  * Improved support for game client debugging (-debug)
+ * Removed bootstrapper file
+ * Added networking in main script
 
 **version: 1.4.2**
  * Better support for XDG folders and arbitrary directories
