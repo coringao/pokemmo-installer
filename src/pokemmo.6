@@ -36,8 +36,9 @@ on the official website - https://pokemmo.eu/account
 .br
 This program downloads and installs the PokeMMO client to a user's home directory.
 .PP
-You need to enter in the hidden personal directory (**$HOME/.local/share/pokemmo/roms**)
-the roms of the games in the versions **Game Boy Advance** and **Nintendo DS**.
+You need to enter in the hidden personal directory
+.B ($HOME/.local/share/pokemmo/roms)
+the roms of the games in the versions "Game Boy Advance" and "Nintendo DS".
 .PP
 Locate compatible *ROMS* using the ingame menu:
 .PP
@@ -58,26 +59,34 @@ Locate compatible *ROMS* using the ingame menu:
 .SH OPTIONS
 .TP
 .B -h
+.br
 Displays help text.
 .TP
 .B -H <dir>
-Defines the PokeMMO directory to the target, instead of $HOME/.local/share/pokemmo
+.br
+Defines the PokeMMO directory to the target, instead of
+.B $HOME/.local/share/pokemmo
 .TP
 .B -v
+.br
 Verbose output in stdout.
 .TP
 .B --debug
+.br
 Enables debugging of child java processes (Client and Updater)
 .TP
 .B --swr
+.br
 When launching, the client will attempt to use a software renderer if one is available.
 If the client is in a Mesa3D environment, LIBGL_ALWAYS_SOFTWARE will be enabled.
 Otherwise the internal LWJGL2 swr will be enabled.
 .TP
 .B --reverify
+.br
 Reverify the contents of the PokeMMO directory using the bootstrapper. This process is non-destructive.
 .TP
 .B --skip-java-ram-opts
+.br
 Use the operating system's default settings for java RAM allocation (-Xmx & -Xms)
 .br
 .PP
