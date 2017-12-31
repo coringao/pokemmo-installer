@@ -8,6 +8,7 @@
 #
 #	Use of this file is governed by a GPLv3 license that can be found
 #	in the LICENSE file.
+#
 #	This program is released under the GPL with the additional exemption
 #	that compiling, linking and/or using OpenSSL is allowed.
 #
@@ -17,7 +18,7 @@
 getCanDebug() {
 
 if [[ $(which jps) ]]; then
-    PKMO_CREATE_DEBUGS=1 
+    PKMO_CREATE_DEBUGS=1
 else
     echo "Debug mode is unavailable. Please install the Java Development Kit and ensure jps is in your PATH"
     return 1
