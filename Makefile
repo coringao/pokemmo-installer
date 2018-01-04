@@ -1,12 +1,8 @@
 ###############################################################################
-#	(c) Copyright holder 2012-2017 PokeMMO.eu <linux@pokemmo.eu>
-#	(c) Copyright 2017 Carlos Donizete Froes [a.k.a coringao]
+#  This file is part of PokeMMO, is an emulator of several popular
+#  console games with additional features and multiplayer capabilities.
 #
-#	This file is part of PokeMMO, is an emulator of several popular
-#	console games with additional features and multiplayer capabilities.
-#
-#	Use of this file is governed by a GPLv3 license that can be found
-#	in the LICENSE file.
+#  For license and copyright information, it can be found in the LEGAL file.
 ###############################################################################
 
 EXE = pokemmo
