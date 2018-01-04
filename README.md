@@ -59,10 +59,13 @@ To make the removal, within the compiled directory, execute this command:
 
 **License**
 -----------
+The source code is published under GPLv3 with OpenSSL exception,
+the full license can be found in the LICENSE file.
+
 > This is free software: you can redistribute it and/or modify it under
 > the terms of the GNU General Public License as published by
 > the Free Software Foundation, either version 3 of the License,
 > or any later version.
 
-- (c) Copyright holder 2012-2017 **PokeMMO.eu** <linux@pokemmo.eu>
-- (c) Copyright 2017 Carlos Donizete Froes [a.k.a coringao]
+- (c) Copyright holder 2012-2018 **PokeMMO.eu** <linux@pokemmo.eu>
+- (c) Copyright 2017-2018 Carlos Donizete Froes [a.k.a coringao]
