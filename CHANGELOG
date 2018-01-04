@@ -1,17 +1,8 @@
-###############################################################################
-#	(c) Copyright holder 2012-2017 PokeMMO.eu <linux@pokemmo.eu>
-#	(c) Copyright 2017 Carlos Donizete Froes [a.k.a coringao]
-#
-#	This file is part of PokeMMO, is an emulator of several popular
-#	console games with additional features and multiplayer capabilities.
-#
-#	Use of this file is governed by a GPLv3 license that can be found
-#	in the LICENSE file.
-###############################################################################
-
 **version: 1.4.3**
  * Fixed an issue where XDG directories could be invalid
+ * Added single LEGAL file with license and copyright
  * Improved support for game client debugging (-debug)
+ * Added OpenSSL/GPL exception to LICENSE file
  * Removed bootstrapper file
  * Added networking in main script
 
