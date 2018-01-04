@@ -1,16 +1,16 @@
 #!/bin/bash
 #
-#	(c) Copyright holder 2012-2017 PokeMMO.eu <linux@pokemmo.eu>
-#	(c) Copyright 2017 Carlos Donizete Froes [a.k.a coringao]
+#  (c) Copyright holder 2012-2018 PokeMMO.eu <linux@pokemmo.eu>
+#  (c) Copyright 2017-2018 Carlos Donizete Froes [a.k.a coringao]
 #
-#	This file is part of PokeMMO, is an emulator of several popular
-#	console games with additional features and multiplayer capabilities.
+#  This file is part of PokeMMO, is an emulator of several popular
+#  console games with additional features and multiplayer capabilities.
 #
-#	Use of this file is governed by a GPLv3 license that can be found
-#	in the LICENSE file.
+#  Use of this file is governed by a GPLv3 license that can be found
+#  in the LICENSE file.
 #
-#	This program is released under the GPL with the additional exemption
-#	that compiling, linking and/or using OpenSSL is allowed.
+#  This program is released under the GPL with the additional exemption
+#  that compiling, linking and/or using OpenSSL is allowed.
 #
 # Script name:    'pokemmo.sh'
 # Edited version: '1.4.3'
