@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=PokeMMO
-Comment=Multiplayer online game based on the Pokemon universe
+Comment=Play the new era of monster battles online
 Exec=pokemmo
-Keywords=game;adventure;MMO;multiplayer;online;fantasy;emulator;pokemon;
+Keywords=game;adventure;multiplayer;online;fantasy;emulator;monster;battle;
 Terminal=false
 Type=Application
 Icon=pokemmo
