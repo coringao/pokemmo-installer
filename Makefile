@@ -2,7 +2,8 @@
 #  This file is part of PokeMMO, is an emulator of several popular
 #  console games with additional features and multiplayer capabilities.
 #
-#  For license and copyright information, it can be found in the LEGAL file.
+#  The source code is published under GPLv3 with OpenSSL exception,
+#  the full license can be found in the LICENSE file.
 ###############################################################################
 
 EXE = pokemmo
