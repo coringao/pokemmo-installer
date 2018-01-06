@@ -36,7 +36,7 @@ the roms of the games in the versions **GameBoy Advance** and **Nintendo DS**.
 **Installation dependency: Debian/Ubuntu/GNU/Linux**
 ------------------------------------------
 
-    # apt install default-jre make zenity
+    # apt install default-jre make openssl zenity
 
 When all these dependencies have installed, simply run the script.
 
