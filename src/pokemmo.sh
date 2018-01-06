@@ -6,14 +6,11 @@
 #  This file is part of PokeMMO, is an emulator of several popular
 #  console games with additional features and multiplayer capabilities.
 #
-#  Use of this file is governed by a GPLv3 license that can be found
-#  in the LICENSE file.
-#
-#  This program is released under the GPL with the additional exemption
-#  that compiling, linking and/or using OpenSSL is allowed.
+#  The source code is published under GPLv3 with OpenSSL exception,
+#  the full license can be found in the LICENSE file.
 #
 # Script name:    'pokemmo.sh'
-# Edited version: '1.4.3'
+# Edited version: '1.4.4'
 
 getCanDebug() {
 
