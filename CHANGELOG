@@ -1,3 +1,7 @@
+**version: 1.4.4**
+ * Changed short description in manpage
+ * Changed desktop file comment
+
 **version: 1.4.3**
  * Fixed an issue where XDG directories could be invalid
  * Added single LEGAL file with license and copyright
