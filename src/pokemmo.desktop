@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=PokeMMO
 Comment=Welcome to a new era of online monster battles
-Exec=pokemmo
+Exec=pokemmo-installer
 Keywords=game;adventure;multiplayer;online;fantasy;emulator;monster;battle;
 Terminal=false
 Type=Application
