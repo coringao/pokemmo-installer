@@ -67,7 +67,7 @@ To make the removal, within the compiled directory, execute this command:
 
 **License**
 -----------
-The script main is published under GPLv3 with OpenSSL exception,
+The program is published under GPLv3 with OpenSSL exception,
 the full license can be found in the LICENSE file.
 
 > This is free software: you can redistribute it and/or modify it under
