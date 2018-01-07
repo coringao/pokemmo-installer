@@ -1,21 +1,22 @@
 ###############################################################################
-#  This file is part of PokeMMO, is an emulator of several popular
-#  console games with additional features and multiplayer capabilities.
+#  This file is part of PokeMMO Installer, is an program downloads and
+#  installs the PokeMMO client to a user's home directory and provides
+#  a launcher script for a convientient starting of the emulator.
 #
 #  The source code is published under GPLv3 with OpenSSL exception,
 #  the full license can be found in the LICENSE file.
 ###############################################################################
 
-EXE = pokemmo
+EXE = pokemmo-installer
 SRCDIR = src
 PREFIX = $(DESTDIR)/usr
 BINDIR = $(PREFIX)/games
 ICNDIR = $(PREFIX)/share/pixmaps
 APPDIR = $(PREFIX)/share/applications
 
-SCRIPT = pokemmo.sh
-ICON = pokemmo.png
-DESKTOP = pokemmo.desktop
+SCRIPT = pokemmo-installer.sh
+ICON = pokemmo-installer.png
+DESKTOP = pokemmo-installer.desktop
 
 CP = cp -f
 RM = rm -rf
