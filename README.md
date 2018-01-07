@@ -1,5 +1,9 @@
-PokeMMO for GNU/Linux
-=====================
+PokeMMO Installer for GNU/Linux
+===============================
+
+This program downloads and installs the PokeMMO client to a user's home
+directory and provides a launcher script for a convientient
+starting of the emulator.
 
 PokeMMO is an emulator of several popular console games with additional
 features and multiplayer capabilities.
@@ -18,6 +22,10 @@ up and discover new monsters.
 To play this game, you need to make a free registration on the official website
 - https://pokemmo.eu/account
 
+The permitted usage of the PokeMMO game client is defined by a non-free license.
+The content of this license can be found in the game client after an account's
+first login or at https://pokemmo.eu/tos
+
 **Important Request**
 ---------------------
 
@@ -34,7 +42,7 @@ the roms of the games in the versions **GameBoy Advance** and **Nintendo DS**.
 > the roms, or help you find them as they are copyrighted.** 
 
 **Installation dependency: Debian/Ubuntu/GNU/Linux**
-------------------------------------------
+----------------------------------------------------
 
     # apt install default-jre make openssl zenity
 
@@ -59,7 +67,7 @@ To make the removal, within the compiled directory, execute this command:
 
 **License**
 -----------
-The source code is published under GPLv3 with OpenSSL exception,
+The script main is published under GPLv3 with OpenSSL exception,
 the full license can be found in the LICENSE file.
 
 > This is free software: you can redistribute it and/or modify it under
