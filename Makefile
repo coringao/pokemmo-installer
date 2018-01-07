@@ -14,9 +14,9 @@ BINDIR = $(PREFIX)/games
 ICNDIR = $(PREFIX)/share/pixmaps
 APPDIR = $(PREFIX)/share/applications
 
-SCRIPT = pokemmo-installer.sh
-ICON = pokemmo-installer.png
-DESKTOP = pokemmo-installer.desktop
+SCRIPT = pokemmo.sh
+ICON = pokemmo.png
+DESKTOP = pokemmo.desktop
 
 CP = cp -f
 RM = rm -rf
