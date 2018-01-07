@@ -59,7 +59,7 @@ To build game, do from the source directory: (Requires root access for compilati
 
 Once completed, it will appear in the application menu or run the created binary:
 
-    $ ./pokemmo
+    $ pokemmo-installer
 
 To make the removal, within the compiled directory, execute this command:
     
