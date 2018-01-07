@@ -3,7 +3,7 @@
 #  installs the PokeMMO client to a user's home directory and provides
 #  a launcher script for a convientient starting of the emulator.
 #
-#  The source code is published under GPLv3 with OpenSSL exception,
+#  The program is published under GPLv3 with OpenSSL exception,
 #  the full license can be found in the LICENSE file.
 ###############################################################################
 
