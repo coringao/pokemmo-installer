@@ -3,14 +3,15 @@
 #  (c) Copyright holder 2012-2018 PokeMMO.eu <linux@pokemmo.eu>
 #  (c) Copyright 2017-2018 Carlos Donizete Froes [a.k.a coringao]
 #
-#  This file is part of PokeMMO, is an emulator of several popular
-#  console games with additional features and multiplayer capabilities.
+#  This file is part of PokeMMO Installer, is an program downloads and
+#  installs the PokeMMO client to a user's home directory and provides
+#  a launcher script for a convientient starting of the emulator.
 #
-#  The source code is published under GPLv3 with OpenSSL exception,
+#  The script main is published under GPLv3 with OpenSSL exception,
 #  the full license can be found in the LICENSE file.
 #
-# Script name:    'pokemmo.sh'
-# Edited version: '1.4.4'
+# Script name:    'pokemmo-installer.sh'
+# Edited version: '1.4.5'
 
 getCanDebug() {
 
