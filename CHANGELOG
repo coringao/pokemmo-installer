@@ -1,3 +1,12 @@
+**version: 1.4.5**
+ * Updated desktop file
+ * Updated the readme description
+ * Changed program name for 'PokeMMO Installer'
+ * Rename the binary package to 'pokemmo-installer'
+ * Updated executable script main
+ * Rename the manpage to 'pokemmo-installer.6'
+ * Updated the description of the manpage
+
 **version: 1.4.4**
  * Changed short description in manpage
  * Changed desktop file comment
