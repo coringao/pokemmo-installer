@@ -10,7 +10,7 @@
 #  The script main is published under GPLv3 with OpenSSL exception,
 #  the full license can be found in the LICENSE file.
 #
-# Script name:    'pokemmo.sh'
+# Script name:    'pokemmo-installer.sh'
 # Edited version: '1.4.5'
 
 getCanDebug() {
