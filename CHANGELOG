@@ -7,7 +7,7 @@
  * Rename the manpage to 'pokemmo-installer.6'
  * Rename the desktop file
  * Removed the official game logo
- * Added SVG and PNG image
+ * Added official image in SVG and PNG format
  * Updated the description of the manpage
 
 **version: 1.4.4**
