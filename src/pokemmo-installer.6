@@ -4,15 +4,8 @@ pokemmo-installer \- is a program downloads and installs the PokeMMO client to
 a user's home directory and provides a launcher script for a convientient
 starting of the emulator.
 .br
-PokeMMO is a free to play mmorpg, come join a growing community as you level
-up and discover new monsters.
-.br
-.PP
-.SH SYNOPSIS
-.B pokemmo
-[
-.BI - options
-]
+This launcher assists with the download, installation, and maintenance of
+the game client.
 .br
 .PP
 .SH DESCRIPTION
@@ -25,15 +18,16 @@ but you can face other players and even form groups with your friends,
 do joint battles and group missions.
 .PP
 You can call them to duel with you or even watch the fight with other people.
-.PP
-This launcher assists with the download, installation, and maintenance of
-the game client.
 .br
 .PP
 .SH REGISTER
 .br
 To play this game, you need to make a free registration
 on the official website - https://pokemmo.eu/account
+.PP
+The permitted usage of the PokeMMO game client is defined by a non-free license.
+The content of this license can be found in the game client after
+an account's first login or at https://pokemmo.eu/tos
 .br
 .PP
 .SH IMPORTANT REQUEST
@@ -53,45 +47,10 @@ Locate compatible *ROMS* using the ingame menu:
 .br
 * Current Optional Visuals Compatible ROMS: HeartGold, SoulSilver (NDS)
 .br
-.PP
 .TP
 .B You must have the legal right to use that rom.
 .TP
 .B We will not supply you with the roms, or help you find them as they are copyrighted.
-.br
-.PP
-.SH OPTIONS
-.TP
-.B -h
-.br
-Displays help text.
-.TP
-.B -H <dir>
-.br
-Defines the PokeMMO directory to the target, instead of
-.B $HOME/.local/share/pokemmo
-.TP
-.B -v
-.br
-Verbose output in stdout.
-.TP
-.B --debug
-.br
-Enables debugging of child java processes (Client and Updater)
-.TP
-.B --swr
-.br
-When launching, the client will attempt to use a software renderer if one is available.
-If the client is in a Mesa3D environment, LIBGL_ALWAYS_SOFTWARE will be enabled.
-Otherwise the internal LWJGL2 swr will be enabled.
-.TP
-.B --reverify
-.br
-Reverify the contents of the PokeMMO directory using the bootstrapper. This process is non-destructive.
-.TP
-.B --skip-java-ram-opts
-.br
-Use the operating system's default settings for java RAM allocation (-Xmx & -Xms)
 .br
 .PP
 .SH AUTHOR
