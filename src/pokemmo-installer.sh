@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#  (c) Copyright holder 2012-2018 PokeMMO.eu <linux@pokemmo.eu>
-#  (c) Copyright 2017-2018 Carlos Donizete Froes [a.k.a coringao]
+#  (c) Copyright 2012-2018 **PokeMMO Game Client** PokeMMO.eu <linux@pokemmo.eu>
+#  (c) Copyright 2017-2018 **PokeMMO Installer** Carlos Donizete Froes [a.k.a coringao]
 #
 #  This file is part of PokeMMO Installer, is an program downloads and
 #  installs the PokeMMO client to a user's home directory and provides
