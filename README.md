@@ -75,5 +75,5 @@ the full license can be found in the LICENSE file.
 > the Free Software Foundation, either version 3 of the License,
 > or any later version.
 
-- (c) Copyright 2012-2018 **PokeMMO Game Client** PokeMMO.eu <linux@pokemmo.eu>
+- (c) Copyright 2012-2018 **PokeMMO Client** PokeMMO.eu <linux@pokemmo.eu>
 - (c) Copyright 2017-2018 **PokeMMO Installer** Carlos Donizete Froes [a.k.a coringao]
