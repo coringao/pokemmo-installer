@@ -2,7 +2,7 @@ PokeMMO Installer for GNU/Linux
 ===============================
 
 This program downloads and installs the PokeMMO client to a user's home
-directory and provides a launcher script for a convientient
+directory and provides a launcher script for a convenient
 starting of the emulator.
 
 PokeMMO client is an emulator of several popular console games with additional
@@ -44,7 +44,7 @@ the roms of the games in the versions **GameBoy Advance** and **Nintendo DS**.
 **Installation dependency: Debian/Ubuntu/GNU/Linux**
 ----------------------------------------------------
 
-    # apt install default-jre make openssl zenity
+    # apt install default-jre make openssl zenity wget
 
 When all these dependencies have installed, simply run the script.
 
