@@ -11,25 +11,28 @@
 #  the full license can be found in the LICENSE file.
 #
 # Script name:    'pokemmo-installer.sh'
-# Edited version: '1.4.5'
+# Edited version: '1.4.6'
 
-getCanDebug() {
+addScreenshotsDir() (
 
-if [[ $(which jps) ]]; then
-    PKMO_CREATE_DEBUGS=1
+[[ ! -d "$XDG_CONFIG_HOME" ]] && XDG_CONFIG_HOME="$HOME/.config"
+[[ -f "$XDG_CONFIG_HOME/user-dirs.dirs" ]] && source "$XDG_CONFIG_HOME/user-dirs.dirs"
+
+if [[ -d "$XDG_PICTURES_DIR" ]]; then
+	ln -s "$XDG_PICTURES_DIR" "$POKEMMO/screenshots"
 else
-    echo "Debug mode is unavailable. Please install the Java Development Kit and ensure jps is in your PATH"
-    return 1
+	[[ -L "$POKEMMO/screenshots" ]] && unlink "$POKEMMO/screenshots"
+	mkdir -p "$POKEMMO/screenshots"
 fi
 
-}
+)
 
 getLauncherConfig() {
 
 while read i; do
     case $i in
         installed=1) PKMO_IS_INSTALLED=1 ;;
-        debugs=1) getCanDebug ;;
+        debugs=1) PKMO_CREATE_DEBUGS=1 ;;
         swr=1) export LIBGL_ALWAYS_SOFTWARE=1 ;;
         *) continue ;;
     esac
@@ -68,13 +71,13 @@ echo "Java options were ${JAVA_OPTS[*]}"
 showMessage() {
   if [ "$(command -v zenity)" ]; then
     case "$1" in
-      --info) zenity --info --text="$2" ; echo "INFO: $2" ;;
-      --error) zenity --error --text="$2" ; echo "ERROR: $2" ; exit 1 ;;
-      --warn) zenity --warning --text="$2" ; echo "WARNING: $2" ;;
+      --info) zenity --notification --window-icon=/usr/share/pixmaps/pokemmo-installer.png --text="$2" ; echo "INFO: $2" ;;
+      --error) zenity --error --width="250" --text="$2" ; echo "ERROR: $2" ; exit 1 ;;
+      --warn) zenity --warning --width="250" --text="$2" ; echo "WARNING: $2" ;;
     esac
   elif [ "$(command -v kdialog)" ]; then
     case "$1" in
-      --info) kdialog --passivepopup "$2" ; echo "INFO: $2" ;;
+      --info) kdialog --icon /usr/share/pixmaps/pokemmo-installer.png --passivepopup "$2" ; echo "INFO: $2" ;;
       --error) kdialog --error "$2" ; echo "ERROR: $2" ; exit 1 ;;
       --warn) kdialog --sorry "$2" ; echo "WARNING: $2" ;;
     esac
@@ -88,9 +91,11 @@ showMessage() {
 }
 
 downloadPokemmo() {
-  # The openssl command line utilities are a base package in this version of Debian, so this should only error on a broken environment, or during a case where the user has broken their openssl access
-  [[ $(which openssl) ]] || showMessage --error "The `openssl` binary was not found. Please check your PATH is set correctly and restart the program."
 
+  [[ $(which openssl) ]] || showMessage --error "The openssl binary was not found. Please check your PATH is set correctly and restart the program."
+  
+  unset DL_MIRRORS PKMO_PUBKEY MIRROR_STATUS VALIDATION_STATUS
+  
   DL_MIRRORS=(https://dl.pokemmo.eu https://files.pokemmo.eu https://dl.pokemmo.download https://dl.pokemmo.com)
   # This keyfile is provided by the PokeMMO developers. Do not alter/remove it, it is used to confirm the source of the downloaded files!
   PKMO_PUBKEY="-----BEGIN PUBLIC KEY-----\nMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAyfYQx1kSfIVGdGzcHmVV\nP7cbyLsMXGdLhwMnx2AD1MYgU170iFN5gHT+U248rH10L6D1UMlZK1LfCsbPkdQO\nir3C+8Do212NONyNm/7+ZGeIwbpy+jxEQH8Jfn4JYY7+Sn4qg249yW7DSY+XKvTO\ncphoXRNzSQp8u6IVj03mIw7zDA0SqMMFtnCXVP3NRmtjK1SuVVFLltFctz1Pp7f9\nuqgqnFlgD2l8/THnddTRM5IR6O9pbOXu7My0+Jli6+4zJgw5gQvgivYPCeess9gW\nRqpw66VTpMJERJYA6AIbVierAbjGmtRETRsHUOGAgo54G0oxtXXEaTWXF6n6mdgS\nE2Ra8q7P23stsSWU3mDNQjXO0XOhtAKQCZfvICxmsH3ed5hm8bEC5yga8z8m0vyZ\n71fWzP4Q3g6B+o6oDsMX1nWbV2GEHci/6nwFofgOJkLINaZfUTivAIRuxECVwjTT\na7ruRNgFlA2ciGUIIke2Ev2cYzyBA4LLARky2FZiEM0VAgMBAAE=\n-----END PUBLIC KEY-----"
@@ -134,6 +139,9 @@ downloadPokemmo() {
   getJavaOpts "updater"
   (cd "$POKEMMO" && java ${JAVA_OPTS[*]} -cp ./pokemmo_updater.jar com.pokeemu.updater.ClientUpdater -install -quick) && exit 1 || echo "installed=1" > "$PKMOCONFIGDIR/pokemmo"
   rm -f "$POKEMMO/pokemmo_updater.jar"
+  
+  # Post-update tasks
+  [[ ! -d "$POKEMMO/screenshots" ]] && addScreenshotsDir
 }
 
 verifyInstallation() {
@@ -158,6 +166,7 @@ if [[ ! -r "$POKEMMO" || ! -w "$POKEMMO" || ! -x "$POKEMMO" || ! "$PKMO_IS_INSTA
 fi
 
 [[ $PKMO_REINSTALL && $PKMO_IS_INSTALLED ]] && downloadPokemmo
+[[ ! -d "$POKEMMO/screenshots" ]] && addScreenshotsDir
 }
 
 ######################
@@ -189,7 +198,7 @@ while getopts "vhH:-:" opt; do
         -) case "$OPTARG" in
                skip-java-ram-opts) SKIPJAVARAMOPTS=1 ;;
                reverify) PKMO_REINSTALL=1 ;;
-               debug) getCanDebug ;;
+               debug) PKMO_CREATE_DEBUGS=1 ;;
                swr) export LIBGL_ALWAYS_SOFTWARE=1 ;;
            esac
         ;;
@@ -242,29 +251,22 @@ verifyInstallation
 getJavaOpts "client"
 
 if [[ $PKMO_CREATE_DEBUGS ]]; then
-    cd "$POKEMMO" && ( java ${JAVA_OPTS[*]} -cp ./lib/*:PokeMMO.exe com.pokeemu.client.Client > /dev/null ) &
+	cd "$POKEMMO"
+    ( java ${JAVA_OPTS[*]} -cp ./lib/*:PokeMMO.exe com.pokeemu.client.Client ) &
 
+	client_pid=$!
+	
+	echo "DEBUG: Spawned client_pid $client_pid"
+	
     rm -f "$POKEMMO/client_jvm.log"
-
-    v=0
-    while [ -z "$(jps | grep Client)" ]; do
-        if (( v < 30 )); then
-            sleep 1
-            echo "DEBUG: Slept for $v seconds while waiting for the client to start"
-            v=$(( v + 1 ))
-        else
-            echo "Failed to detect main class Client during debug setup"
-            exit 1
-        fi
-    done
-
-    CLIENT_PID="$(jps | grep Client | tr -d '[:space:][a-zA-Z]')"
 
     while :; do
         sleep 3
-        kill -3 "$CLIENT_PID" || break
+        kill -3 "$client_pid" || break
         echo "DEBUG: Threads dumped for Client JVM. Sleeping for 3 seconds.."
     done
+
+	wait
 else
-        cd "$POKEMMO" && java ${JAVA_OPTS[*]} -cp ./lib/*:PokeMMO.exe com.pokeemu.client.Client > /dev/null
+	cd "$POKEMMO" && java ${JAVA_OPTS[*]} -cp ./lib/*:PokeMMO.exe com.pokeemu.client.Client > /dev/null
 fi
