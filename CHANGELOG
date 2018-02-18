@@ -1,3 +1,10 @@
+**version: 1.4.6**
+ * Screenshots for the game client now point to ~/Pictures
+ * Fixed zenity window width
+ * Fixed dependency for wget / kdialog
+ * Debug mode no longer requires jps
+ * Fixed an issue where a corrupt updater could return as valid
+
 **version: 1.4.5**
  * Updated desktop file
  * Updated the readme description
