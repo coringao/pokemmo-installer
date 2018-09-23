@@ -1,3 +1,9 @@
+**version: 1.4.7**
+ * Workaround for illegal reflection access warning in java9+ for lwjgl2
+ * Fixed default file encoding for error reports / logging
+ * Reduced default RAM allocation to 256M
+ * Removed legacy lib/ folder support
+
 **version: 1.4.6**
  * Screenshots for the game client now point to ~/Pictures
  * Fixed zenity window width

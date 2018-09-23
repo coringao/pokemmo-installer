@@ -11,7 +11,7 @@
 #  the full license can be found in the LICENSE file.
 #
 # Script name:    'pokemmo-installer.sh'
-# Edited version: '1.4.6'
+# Edited version: '1.4.7'
 
 addScreenshotsDir() (
 
@@ -47,12 +47,12 @@ JAVA_OPTS=()
 case "$1" in
     client)
         if [[ ! $SKIPJAVARAMOPTS ]]; then
-            JAVA_OPTS=(-Xms128M)
+            JAVA_OPTS=(-Xms128M --add-opens java.base/java.lang=ALL-UNNAMED -Dfile.encoding=UTF-8)
 
             if [ -f "$POKEMMO/PokeMMO.l4j.ini" ]; then
-                JAVA_OPTS+=($(grep -oE "\-Xmx[0-9]{1,4}(M|G)" "$POKEMMO/PokeMMO.l4j.ini" || echo -- "-Xmx384M"))
+                JAVA_OPTS+=($(grep -oE "\-Xmx[0-9]{1,4}(M|G)" "$POKEMMO/PokeMMO.l4j.ini" || echo "-Xmx256M"))
             else
-                JAVA_OPTS+=(-Xmx384M)
+                JAVA_OPTS+=(-Xmx256M)
             fi
         fi
 
@@ -157,7 +157,7 @@ if [ ! -d "$POKEMMO" ]; then
   fi
 fi
 
-if [[ ! -r "$POKEMMO" || ! -w "$POKEMMO" || ! -x "$POKEMMO" || ! "$PKMO_IS_INSTALLED" || ! -f "$POKEMMO/PokeMMO.exe" || ! -d "$POKEMMO/data" || ! -d "$POKEMMO/lib" ]]; then
+if [[ ! -r "$POKEMMO" || ! -w "$POKEMMO" || ! -x "$POKEMMO" || ! "$PKMO_IS_INSTALLED" || ! -f "$POKEMMO/PokeMMO.exe" || ! -d "$POKEMMO/data" ]]; then
     showMessage --warn "(Error 1) The installation is in a corrupt state.\n\nReverifying the game files."
     # Try to fix permissions before erroring out
     (chmod u+rwx "$POKEMMO" && find "$POKEMMO" -type d -exec chmod u+rwx {} + && find "$POKEMMO" -type f -exec chmod u+rw {} +) || showMessage --error "(Error 4) Could not fix permissions of $POKEMMO.\n\nContact PokeMMO support."
@@ -252,7 +252,7 @@ getJavaOpts "client"
 
 if [[ $PKMO_CREATE_DEBUGS ]]; then
 	cd "$POKEMMO"
-    ( java ${JAVA_OPTS[*]} -cp ./lib/*:PokeMMO.exe com.pokeemu.client.Client ) &
+    ( java ${JAVA_OPTS[*]} -cp PokeMMO.exe com.pokeemu.client.Client ) &
 
 	client_pid=$!
 	
@@ -268,5 +268,5 @@ if [[ $PKMO_CREATE_DEBUGS ]]; then
 
 	wait
 else
-	cd "$POKEMMO" && java ${JAVA_OPTS[*]} -cp ./lib/*:PokeMMO.exe com.pokeemu.client.Client > /dev/null
+	cd "$POKEMMO" && java ${JAVA_OPTS[*]} -cp PokeMMO.exe com.pokeemu.client.Client > /dev/null
 fi
