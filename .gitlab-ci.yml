@@ -1,0 +1,10 @@
+stages:
+  - test
+
+before_script:
+  - apt update -y
+  - apt install default-jre make openssl zenity wget -y
+
+pokemmo-installer:
+  - stage: test
+  - script: make
